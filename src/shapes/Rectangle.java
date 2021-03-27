@@ -13,6 +13,7 @@ public class Rectangle extends Polygon {
 
     @Override
     public void draw() {
-        getWhiteBoard().drawRectangle(point.getX(), point.getY(), lengthX,lengthY,getColor(),isSolid(),0.0D);
+        getWhiteBoard().removeShape(representation);
+        representation = getWhiteBoard().drawRectangle(point.getX(), point.getY(), lengthX, lengthY, getColor(), isSolid(), 0.0D);
     }
 }
