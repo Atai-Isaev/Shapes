@@ -11,6 +11,7 @@ public abstract class Shape implements Drawable {
     private boolean solid;
 
     public Shape() {
+        whiteBoard = new WhiteBoard();
     }
 
     public Color getColor() {
