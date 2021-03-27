@@ -1,3 +1,4 @@
+import exception.RectangleShapeException;
 import shapes.Figure;
 import shapes.Point;
 import shapes.Polygon;
@@ -7,10 +8,18 @@ import java.util.ArrayList;
 public class Start {
     public static void main(String[] args) throws Exception {
 
-        Figure sm = Figure.snowMan();
-        sm.draw();
-        sm.move(20,20);
-        sm.draw();
+        try {
+            Figure.snowMan().draw();
+        } catch (RectangleShapeException e) {
+            System.out.println("Rectangle height or width values are incorrect! " +
+                    "Try to set only positive values.");
+            e.printStackTrace();
+        } catch (NullPointerException e) {
+            System.out.println("NullPointerException occurred! Please, try to provide a " +
+                    "valid point when defining a new rectangle.");
+            e.printStackTrace();
+        }
+
         //Start Testing Polygon class
         Point p1 = new Point(400, 500);
         Point p2 = new Point(300, 600);
