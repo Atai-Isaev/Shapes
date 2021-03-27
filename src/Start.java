@@ -1,4 +1,5 @@
 import exception.RectangleShapeException;
+import shapes.Circle;
 import shapes.Figure;
 import shapes.Point;
 import shapes.Polygon;
@@ -61,6 +62,13 @@ public class Start {
         //Testing setPoints()-method on null value
         Polygon polygonNullParam = new Polygon();
         polygonNullParam.setPoints(null);
-        //End Testing Polygon class
+
+        //Testing Circle with negative radius
+        Circle circle1 = new Circle(-1,new Point(200,200));
+        circle1.draw();
+
+        //Testing Circle with null Point
+        Circle circle2 = new Circle(12,null);
+        circle2.draw();
     }
 }
