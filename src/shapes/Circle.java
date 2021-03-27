@@ -1,14 +1,24 @@
 package shapes;
 
+import exception.CircleRadiusIsNegativeException;
+
 import java.awt.*;
 
 public class Circle extends Shape{
-    private final int radius;
+    private int radius;
     private Point center;
 
-    public Circle(int radius, Point point) {
-        this.radius = radius;
-        this.center = point;
+    public Circle(int radius, Point point) throws CircleRadiusIsNegativeException{
+        try{
+            if (radius>0){
+                this.radius = radius;
+                this.center = point;
+            }else throw new CircleRadiusIsNegativeException("The radius of the circle is zero or less than zero!");
+        }catch (NullPointerException e){
+            e.printStackTrace();
+            System.out.println("Parameter radius or koordinates of center point is NULL!");
+        }
+
     }
 
     public void draw(Color color, boolean solid){

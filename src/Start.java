@@ -6,7 +6,7 @@ import shapes.Polygon;
 import java.util.ArrayList;
 
 public class Start {
-    public static void main(String[] args) throws PolygonShapeException {
+    public static void main(String[] args) throws Exception {
 
         Figure sm = Figure.snowMan();
         sm.draw();

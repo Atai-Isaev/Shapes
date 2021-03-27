@@ -27,7 +27,7 @@ public class Figure implements Drawable {
         return this;
     }
 
-    public static Figure snowMan() {
+    public static Figure snowMan() throws Exception{
         Figure snowMan = new Figure();
 
         Figure hat = new Figure();
