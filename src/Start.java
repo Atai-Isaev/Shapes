@@ -1,4 +1,5 @@
 import exception.PolygonShapeException;
+import shapes.Figure;
 import shapes.Point;
 import shapes.Polygon;
 
@@ -6,6 +7,9 @@ import java.util.ArrayList;
 
 public class Start {
     public static void main(String[] args) throws PolygonShapeException {
+
+        Figure sm = Figure.snowMan();
+        sm.draw();
 
         //Start Testing Polygon class
         Point p1 = new Point(400, 500);
