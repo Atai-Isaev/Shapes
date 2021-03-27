@@ -1,5 +1,7 @@
 package shapes;
 
+import exception.PolygonShapeException;
+
 import java.util.ArrayList;
 
 public class Polygon extends Shape {
@@ -13,17 +15,23 @@ public class Polygon extends Shape {
         return points;
     }
 
-    public void setPoints(ArrayList<Point> points) {
-        this.points = points;
+    public void setPoints(ArrayList<Point> p) throws PolygonShapeException {
+        try {
+            if (p.size() >= 2) this.points = p;
+            else throw new PolygonShapeException("List size is lower then 2 Points.");
+        } catch (NullPointerException e) {
+            System.out.println("Parameter in method setPoints() is 'null'!");
+        }
+
     }
 
     @Override
     public void draw() {
-        if (!points.isEmpty()){
+        if (points.size() >= 2) {
             getWhiteBoard().removeShape(representation);
 
-            double[] x = new  double[points.size()];
-            double[] y = new  double[points.size()];
+            double[] x = new double[points.size()];
+            double[] y = new double[points.size()];
 
             for (int i = 0; i < points.size(); i++) {
                 x[i] = points.get(i).getX();
@@ -35,8 +43,8 @@ public class Polygon extends Shape {
     }
 
     @Override
-    public Polygon move(int x, int y) {
-        points.replaceAll(point -> new Point(point.getX()+x, point.getY()+y));
+    public Polygon move(int dx, int dy) {
+        points.replaceAll(point -> new Point(point.getX() + dx, point.getY() + dy));
         return this;
     }
 }
