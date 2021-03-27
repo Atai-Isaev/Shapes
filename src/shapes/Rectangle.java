@@ -5,10 +5,10 @@ public class Rectangle extends Polygon {
     private int lengthY;
     private Point point;
 
-    public Rectangle(Point point, int lengthX, int lengthY) {
-        this.lengthX = lengthX;
-        this.lengthY = lengthY;
-        this.point = point;
+    public Rectangle(Point bottomLeft, int lx, int ly) {
+        this.lengthX = lx;
+        this.lengthY = ly;
+        this.point = bottomLeft;
     }
 
     @Override
