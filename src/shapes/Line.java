@@ -1,30 +1,17 @@
 package shapes;
 
-import java.awt.*;
-
 public class Line extends Polygon{
-   private Point point1;
-   private Point point2;
+   private final Point start;
+   private final Point end;
 
-    public Line(Point point1, Point point2) {
-        this.point1 = point1;
-        this.point2 = point2;
+    public Line(Point start, Point end) throws NullPointerException{
+        this.start = start;
+        this.end = end;
     }
 
     @Override
     public void draw() {
         getWhiteBoard().removeShape(representation);
-        getWhiteBoard().drawLine(point1.getX(),point1.getY(),point2.getX(),point2.getY());
+        getWhiteBoard().drawLine(start.getX(), start.getY(), end.getX(), end.getY());
     }
-
-    /**
-     * Drawing Line with color
-     * @param  color of line
-     */
-    public void draw(Color color) {
-        getWhiteBoard().removeShape(representation);
-        getWhiteBoard().drawLine(point1.getX(),point1.getY(),point2.getX(),point2.getY(),color);
-    }
-
-
 }
