@@ -2,7 +2,7 @@ package shapes;
 
 import java.util.ArrayList;
 
-public class Polygon extends Shape{
+public class Polygon extends Shape {
     private ArrayList<Point> points;
 
     public Polygon() {
