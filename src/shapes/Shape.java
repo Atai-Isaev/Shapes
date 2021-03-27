@@ -1,7 +1,8 @@
 package shapes;
 
-import javafx.scene.paint.Color;
 import teaching.WhiteBoard;
+
+import java.awt.*;
 
 public abstract class Shape implements Drawable {
     protected Object representation;
@@ -10,6 +11,7 @@ public abstract class Shape implements Drawable {
     private boolean solid;
 
     public Shape() {
+        whiteBoard = new WhiteBoard();
     }
 
     public Color getColor() {
