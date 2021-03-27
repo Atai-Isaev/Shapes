@@ -11,8 +11,8 @@ public class Figure implements Drawable {
         this.shapes = new ArrayList<>();
     }
 
-    public Figure addShape(Drawable drawable) {
-        this.shapes.add(drawable);
+    public Figure addShape(Drawable aDrawable) {
+        this.shapes.add(aDrawable);
         return this;
     }
 
@@ -22,12 +22,12 @@ public class Figure implements Drawable {
     }
 
     @Override
-    public Drawable move(int x, int y) {
-        this.shapes.forEach(drawable -> drawable.move(x, y));
+    public Drawable move(int dx, int dy) {
+        this.shapes.forEach(drawable -> drawable.move(dx, dy));
         return this;
     }
 
-    public static Figure snowMan() throws Exception{
+    public static Figure snowMan() throws Exception {
         Figure snowMan = new Figure();
 
         Figure hat = new Figure();

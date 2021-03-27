@@ -1,11 +1,15 @@
 package shapes;
 
+import exception.RectangleShapeException;
+
 public class Rectangle extends Polygon {
     private int lengthX;
     private int lengthY;
     private Point point;
 
-    public Rectangle(Point bottomLeft, int lx, int ly) {
+    public Rectangle(Point bottomLeft, int lx, int ly) throws RectangleShapeException {
+        if (lx <= 0 || ly <= 0)
+            throw new RectangleShapeException("Rectangle height and width can't be negative or 0!");
         this.lengthX = lx;
         this.lengthY = ly;
         this.point = bottomLeft;
