@@ -6,12 +6,11 @@ import java.awt.*;
 
 public abstract class Shape implements Drawable {
     protected Object representation;
-    private static WhiteBoard whiteBoard;
+    private static final WhiteBoard whiteBoard = new WhiteBoard();
     private Color color;
     private boolean solid;
 
     public Shape() {
-        whiteBoard = new WhiteBoard();
     }
 
     public Color getColor() {

@@ -1,4 +1,3 @@
-import exception.PolygonShapeException;
 import shapes.Figure;
 import shapes.Point;
 import shapes.Polygon;
@@ -10,7 +9,8 @@ public class Start {
 
         Figure sm = Figure.snowMan();
         sm.draw();
-
+        sm.move(20,20);
+        sm.draw();
         //Start Testing Polygon class
         Point p1 = new Point(400, 500);
         Point p2 = new Point(300, 600);

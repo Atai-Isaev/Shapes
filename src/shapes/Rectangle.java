@@ -16,4 +16,10 @@ public class Rectangle extends Polygon {
         getWhiteBoard().removeShape(representation);
         representation = getWhiteBoard().drawRectangle(point.getX(), point.getY(), lengthX, lengthY, getColor(), isSolid(), 0.0D);
     }
+
+    @Override
+    public Polygon move(int dx, int dy) {
+        point.move(dx, dy);
+        return this;
+    }
 }

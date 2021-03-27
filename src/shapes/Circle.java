@@ -4,7 +4,7 @@ import exception.CircleRadiusIsNegativeException;
 
 import java.awt.*;
 
-public class Circle extends Shape{
+public class Circle extends Shape {
     private int radius;
     private Point center;
 
@@ -21,8 +21,9 @@ public class Circle extends Shape{
 
     }
 
-    public void draw(Color color, boolean solid){
-        getWhiteBoard().drawCircle(center.getX(), center.getY(), radius, color, solid);
+    public void draw(Color color, boolean solid) {
+        getWhiteBoard().removeShape(representation);
+        representation = getWhiteBoard().drawCircle(center.getX(), center.getY(), radius, color, solid);
     }
 
     @Override
@@ -33,7 +34,7 @@ public class Circle extends Shape{
 
     @Override
     public Drawable move(int x, int y) {
-        this.center = new Point(x,y);
+        this.center = center.move(x, y);
         return this;
     }
 }
