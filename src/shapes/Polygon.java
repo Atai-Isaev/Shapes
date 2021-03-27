@@ -20,6 +20,8 @@ public class Polygon extends Shape {
     @Override
     public void draw() {
         if (!points.isEmpty()){
+            getWhiteBoard().removeShape(representation);
+
             double[] x = new  double[points.size()];
             double[] y = new  double[points.size()];
 
@@ -28,12 +30,12 @@ public class Polygon extends Shape {
                 y[i] = points.get(i).getY();
             }
 
-            getWhiteBoard().drawPolygon(x, y, getColor(), isSolid(), 0.0D);
+            representation = getWhiteBoard().drawPolygon(x, y, getColor(), isSolid(), 0.0D);
         }
     }
 
     @Override
-    public Drawable move(int x, int y) {
+    public Polygon move(int x, int y) {
         points.replaceAll(point -> new Point(point.getX()+x, point.getY()+y));
         return this;
     }
